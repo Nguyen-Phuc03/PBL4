@@ -5,7 +5,7 @@
  */
 package testing;
 
-import com.raven.swing.blurHash.BlurHash;
+import swing.blurHash.BlurHash;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
