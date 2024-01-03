@@ -72,7 +72,7 @@ public class Chat_Bottom extends javax.swing.JPanel {
         cmd.setBorder(null);
         cmd.setContentAreaFilled(false);
         cmd.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        cmd.setIcon(new ImageIcon(getClass().getResource("/com/raven/icon/send.png")));
+        cmd.setIcon(new ImageIcon(getClass().getResource("/icon/send.png")));
         cmd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -83,17 +83,17 @@ public class Chat_Bottom extends javax.swing.JPanel {
         cmdMore.setBorder(null);
         cmdMore.setContentAreaFilled(false);
         cmdMore.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        cmdMore.setIcon(new ImageIcon(getClass().getResource("/com/raven/icon/more_disable.png")));
+        cmdMore.setIcon(new ImageIcon(getClass().getResource("/icon/more_disable.png")));
         cmdMore.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 if (panelMore.isVisible()) {
-                    cmdMore.setIcon(new ImageIcon(getClass().getResource("/com/raven/icon/more_disable.png")));
+                    cmdMore.setIcon(new ImageIcon(getClass().getResource("/icon/more_disable.png")));
                     panelMore.setVisible(false);
                     mig.setComponentConstraints(panelMore, "dock south,h 0!");
                     revalidate();
                 } else {
-                    cmdMore.setIcon(new ImageIcon(getClass().getResource("/com/raven/icon/more.png")));
+                    cmdMore.setIcon(new ImageIcon(getClass().getResource("/icon/more.png")));
                     panelMore.setVisible(true);
                     mig.setComponentConstraints(panelMore, "dock south,h 170!");
                     revalidate();
