@@ -21,8 +21,8 @@ public class Service {
     private static Service instance;
     private Socket client;
     private final int PORT_NUMBER = 12345;
-    private final String IP = "localhost";
- 
+   // private final String IP = "localhost";
+    private final String IP = "169.254.15.42";
     private Model_User_Account user;
     private List<Model_File_Sender> fileSender;
     private List<Model_File_Receiver> fileReceiver;

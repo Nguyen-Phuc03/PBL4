@@ -18,6 +18,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class Main extends javax.swing.JFrame {
 
@@ -80,30 +81,31 @@ public class Main extends javax.swing.JFrame {
             @Override
             public void saveImage(Icon image) {
               JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Choose a folder to save the image");
-
-        // Thiết lập chế độ chọn thư mục
+              fileChooser.setDialogTitle("Choose a folder to save the image");
+  
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
           fileChooser.setApproveButtonText("Save");
-        int option = fileChooser.showOpenDialog(null);
-
-        if (option == JFileChooser.APPROVE_OPTION) {
+       int result = fileChooser.showSaveDialog(Main.getFrames()[0]);
+       
+        if (result == JFileChooser.APPROVE_OPTION) {
+            
             File selectedFolder = fileChooser.getSelectedFile();
-
+            String destinationFilePath = selectedFolder.getAbsolutePath();
             // Lưu image vào thư mục đã chọn
             saveImageToFile(image, selectedFolder);
+            String successMessage = "Đã tải tệp: " +" vào: " + destinationFilePath;
+            JOptionPane.showMessageDialog(null, successMessage, "Thông báo", JOptionPane.INFORMATION_MESSAGE);
         }
             }
 
            private void saveImageToFile(Icon icon, File folder) {
         BufferedImage image = convertIconToBufferedImage(icon);
 
-        // Tạo tên tệp tin mới dựa trên thời gian hiện tại
+        
         String fileName = "image_" + System.currentTimeMillis() + ".png";
         File outputFile = new File(folder, fileName);
 
-        try {
-            // Lưu BufferedImage thành tệp hình ảnh
+        try {            
             ImageIO.write(image, "png", outputFile);
             System.out.println("Image saved successfully to: " + outputFile.getAbsolutePath());
         } catch (IOException e) {

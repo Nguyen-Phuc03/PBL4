@@ -106,10 +106,10 @@ public class Chat_File extends javax.swing.JPanel {
         fileToOpen = new File(filePathDocx);
     } else if (new File(filePathPdf).exists()) {
         fileToOpen = new File(filePathPdf);
-    } else if (new File(filePathPdf).exists()) {
+    } else if (new File(filePathtxt).exists()) {
         fileToOpen = new File(filePathtxt);
     } else {
-        System.out.println("Không tìm thấy tệp: " + fileNameDocx + " hoặc " + fileNamePdf+ " hoặc " + fileNametxt);
+        System.out.println("Không tìm thấy tệp: " + fileNameDocx + " hoặc " + fileNamePdf + " hoặc " + fileNametxt);
         return;
     }
     JFileChooser ch = new JFileChooser();
